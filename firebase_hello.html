@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+<title>Little things</title>
+
+<head>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'>
+    </script>
+    
+    
+    <script type="text/javascript">
+
+
+        function submission() {
+            var email =$('#emailid').val();
+            var messageListRef = new Firebase('https://banzai.firebaseio.com/email');
+var newMessageRef = messageListRef.push();
+newMessageRef.set({'email-id': email, 'text': 'exception_handling'});
+// We've appended a new message to the message_list location.
+var x = newMessageRef.toString();
+// newMessageRef will be something like
+// 'https://SampleChat.firebaseIO-demo.com/message_list/-IKo28nwJLH0Nc5XeFmj'
+alert("Thank you . You will here soon after T-2. All the best !!");
+$('#emailid').val()=" ";
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <h2> Yes , you landed on right page. If you interested in our !dea . </h2>
+    <h2>Click on notify me.</h2> 
+    <h2> We will let you know how we will proceed further .</h2>
+
+
+    <input type="text" placeholder="Just an emailid" id="emailid">
+    <button name="notify" value="notifyme" id="submission" onclick="submission()">Notify me</button>
+
+
+    <h3> Well if you are bit suspicious what this is all about . JUST chill. We are just preparing for launch of a startup. </h3>
+
+
+
+</body>
+
+</html>
