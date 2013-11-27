@@ -1,0 +1,16 @@
+!#/bin/sh
+
+dpkg --get-selections | grep -v deinstall &&
+
+dpkg --get-selections | grep -v deinstall > ~/installed_packages.txt &&
+
+ssh -i data-analysis-jiit.pem  ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com &&
+
+#file transfer from to 
+scp -i data-analysis-aws-jiit.pem <file_to_be_transfered> ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com &&
+
+scp -i data-analysis-aws-jiit.pem  ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com:~/<file_to_be_transfered>
+
+
+
+
