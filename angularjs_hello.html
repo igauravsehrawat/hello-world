@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+</head>
+<body ng-app="app">
+  
+  <div ng-controller="MainController">
+    hello {{MainController.name}}</div>
+From scratch <br><br>
+{{18+19}}
+{{18*19}}
+
+<div ng-controller="NascentController" id="second">
+  <br>
+  <input id="first_name" type="text">
+  <br>
+  <input id="last_name" type="text">
+  
+  <br>
+  <button ng-click="NascentController()">Click to get plus </button>
+  <a href='javascript:NascentController()'> Print </a>
+  Print {{NascentController.first+NascentController.last}}
+</div>
+
+<script> 
+  var app=angular.module('app',[]);
+  function MainController($scope){
+    console.log($scope);
+    //$scope is just an obhect
+    $scope.MainController={};
+    $scope.MainController.name="code jam";
+  
+  
+  }
+  
+  function NascentController($scope){
+    console.log($scope);
+    $scope.NascentController={};
+    //$scope.NascentController.first=document.getElementbyId('first').value;
+  //  $scope.NascentController.last=document.getElementbyId('last').value;
+    //document.getElementbyId("second").innerHtml="print it";
+    scope.
+    $scope.sayAnything=function(){
+      
+      alert('says something');
+      scope.NascentController.name="jaypee city";
+    }
+    
+    
+  }
+</script>
+</body>
+</html>
