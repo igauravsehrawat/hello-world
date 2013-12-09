@@ -19,7 +19,7 @@ scp -i data-analysis-aws-jiit.pem  ubuntu@ec2-54-201-110-32.us-west-2.compute.am
 #dynamic socks ssh thorough amazon ec2 ..
 
 sudo ssh -i data-analysis-aws-jiit.pem ubuntu@ec2-54-200-104-210.us-west-2.compute.amazonaws.com -D 440
-Note: Remember the machine after restart changes 
+Note: Remember the machine ip address changes after it get restart
 
 
 
