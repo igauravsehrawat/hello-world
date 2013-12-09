@@ -1,15 +1,26 @@
 !#/bin/sh
 
+#get list of all the installed packages on the system
 dpkg --get-selections | grep -v deinstall &&
-
+#get the list and echo it into the file 
 dpkg --get-selections | grep -v deinstall > ~/installed_packages.txt &&
+Note: operator used for echo is ">"
 
+
+#simple ssh
 ssh -i data-analysis-jiit.pem  ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com &&
 
-#file transfer from to 
-scp -i data-analysis-aws-jiit.pem <file_to_be_transfered> ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com &&
 
+#file transfer from to pc to amazon
+scp -i data-analysis-aws-jiit.pem <file_to_be_transfered> ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com &&
+#file fetched from amazon to pc
 scp -i data-analysis-aws-jiit.pem  ubuntu@ec2-54-201-110-32.us-west-2.compute.amazonaws.com:~/<file_to_be_transfered>
+
+#dynamic socks ssh thorough amazon ec2 ..
+
+sudo ssh -i data-analysis-aws-jiit.pem ubuntu@ec2-54-200-104-210.us-west-2.compute.amazonaws.com -D 440
+Note: Remember the machine after restart changes 
+
 
 
 
